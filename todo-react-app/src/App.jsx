@@ -1,4 +1,5 @@
 import React from "react";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   return (
@@ -7,7 +8,7 @@ export default function App() {
         <h1>Todo React App</h1>
       </header>
       <main>
-        <p>Welcome — your React app is ready.</p>
+        <TodoList />
       </main>
     </div>
   );
