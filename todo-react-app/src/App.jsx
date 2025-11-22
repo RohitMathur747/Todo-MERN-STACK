@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Todo React App</h1>
+        <h1>Todo React Operations</h1>
       </header>
       <main>
         <TodoList />
