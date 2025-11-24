@@ -1,32 +1,36 @@
 .header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 15px 0;
+  padding: 16px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .logo h2 {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav a {
@@ -44,6 +48,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  white-space: nowrap;
 }
 
 .user-name {
@@ -73,19 +78,83 @@
   color: #667eea;
 }
 
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .nav ul {
+    gap: 20px;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    padding: 12px 0;
+  }
+
   .header-container {
     flex-wrap: wrap;
-    gap: 10px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .logo h2 {
+    font-size: 20px;
+    order: 1;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
   }
 
   .nav ul {
     gap: 15px;
-    font-size: 14px;
+    font-size: 13px;
+    justify-content: flex-start;
+  }
+
+  .auth-section {
+    order: 2;
+    gap: 10px;
+  }
+
+  .user-name {
+    font-size: 12px;
+    display: none;
   }
 
   .logout-btn {
     padding: 6px 12px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header-container {
+    padding: 0 8px;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .nav ul {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .logout-btn {
+    padding: 5px 10px;
+    font-size: 11px;
   }
 }
