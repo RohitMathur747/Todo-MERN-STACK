@@ -23,6 +23,17 @@
   font-weight: 700;
   letter-spacing: 1px;
   white-space: nowrap;
+  margin: 0;
+}
+
+.logo-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
 }
 
 .nav ul {
@@ -32,7 +43,6 @@
   flex: 1;
   justify-content: center;
 }
-
 .nav a {
   color: white;
   text-decoration: none;
