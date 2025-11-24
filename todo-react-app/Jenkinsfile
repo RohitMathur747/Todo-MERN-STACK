@@ -6,6 +6,10 @@ pipeline {
     }
   }
 
+  triggers {
+    githubPush()
+  }
+
   environment {
     CI = 'true'
   }
@@ -31,7 +35,6 @@ pipeline {
 
     stage('Test') {
       steps {
-        // If you have tests, run them. Pipeline won't fail if none exist.
         sh 'npm test || true'
       }
     }

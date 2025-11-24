@@ -2,6 +2,13 @@
   --bg: #f5f7fb;
   --fg: #0f172a;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
@@ -9,11 +16,9 @@ body {
   background: var(--bg);
   color: var(--fg);
 }
-.app {
-  max-width: 640px;
-  margin: 6rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(12, 24, 48, 0.08);
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
