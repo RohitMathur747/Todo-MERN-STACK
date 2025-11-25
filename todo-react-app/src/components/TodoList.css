@@ -76,6 +76,46 @@
   color: white;
 }
 
+/* New: edit / delete variants with black text and theme-friendly backgrounds */
+.btn-edit {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+  color: #111;
+  border: 1px solid rgba(102, 126, 234, 0.12);
+}
+
+.btn-edit:hover {
+  background: linear-gradient(180deg, #f7f9ff 0%, #eef4ff 100%);
+}
+
+.btn-edit:focus,
+.btn-delete:focus,
+.btn-ghost:focus,
+.btn-primary:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.18);
+  outline-offset: 2px;
+}
+
+.btn-delete {
+  background: #ffdada; /* soft red for delete */
+  color: #111; /* black text as requested */
+  border: 1px solid rgba(231, 76, 60, 0.25);
+}
+
+.btn-delete.green {
+  background: #dff7e0; /* soft green alternative */
+  color: #111; /* black text */
+  border: 1px solid rgba(40, 167, 69, 0.16);
+}
+
+.btn-delete:hover {
+  filter: brightness(0.98);
+  transform: translateY(-1px);
+}
+
+.btn-delete:active {
+  transform: translateY(0);
+}
+
 .todo-table {
   width: 100%;
   border-collapse: collapse;
