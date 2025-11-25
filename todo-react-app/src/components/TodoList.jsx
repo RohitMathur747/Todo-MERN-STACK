@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TodoList.css";
 
 export default function TodoList() {
   const emptyItem = {
@@ -58,23 +59,12 @@ export default function TodoList() {
   }
 
   return (
-    <div
-      style={{
-        maxWidth: 900,
-        margin: "16px auto",
-        fontFamily: "Segoe UI, Roboto, sans-serif",
-      }}
-    >
-      <h2>Todo / People List</h2>
+    <div className="todo-container">
+      <h2 className="todo-title">Todo / People List</h2>
 
       <form
         onSubmit={editingIndex >= 0 ? handleUpdate : handleCreate}
-        style={{
-          display: "grid",
-          gap: 8,
-          gridTemplateColumns: "1fr 1fr",
-          marginBottom: 12,
-        }}
+        className="todo-form"
       >
         <input
           name="id"
@@ -119,122 +109,77 @@ export default function TodoList() {
           <option value="other">Other</option>
         </select>
 
-        <div style={{ gridColumn: "1 / -1", display: "flex", gap: 8 }}>
+        <div className="form-actions">
           {editingIndex >= 0 ? (
             <>
-              <button type="submit">Update</button>
-              <button type="button" onClick={handleCancelEdit}>
+              <button type="submit" className="btn btn-primary">
+                Update
+              </button>
+              <button
+                type="button"
+                onClick={handleCancelEdit}
+                className="btn btn-ghost"
+              >
                 Cancel
               </button>
             </>
           ) : (
-            <button type="submit">Create</button>
+            <button type="submit" className="btn btn-primary">
+              Create
+            </button>
           )}
         </div>
       </form>
 
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
-        <thead>
-          <tr>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              ID
-            </th>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              Name
-            </th>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              Event
-            </th>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              Profession
-            </th>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              Education
-            </th>
-            <th
-              style={{
-                textAlign: "left",
-                borderBottom: "1px solid #ddd",
-                padding: 8,
-              }}
-            >
-              Actions
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.length === 0 && (
+      <div className="todo-table-wrapper">
+        <table className="todo-table">
+          <thead>
             <tr>
-              <td colSpan={6} style={{ padding: 12 }}>
-                No items yet.
-              </td>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Event</th>
+              <th>Profession</th>
+              <th>Education</th>
+              <th>Actions</th>
             </tr>
-          )}
-          {items.map((it, idx) => (
-            <tr
-              key={it.id}
-              style={{
-                background: idx === editingIndex ? "#f9f9e6" : "transparent",
-              }}
-            >
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                {it.id}
-              </td>
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                {it.name}
-              </td>
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                {it.event}
-              </td>
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                {it.profession}
-              </td>
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                {it.education}
-              </td>
-              <td style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-                <button
-                  onClick={() => handleEdit(idx)}
-                  style={{ marginRight: 8 }}
-                >
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(idx)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {items.length === 0 && (
+              <tr>
+                <td colSpan={6} className="empty-message">
+                  No items yet.
+                </td>
+              </tr>
+            )}
+            {items.map((it, idx) => (
+              <tr
+                key={it.id}
+                className={idx === editingIndex ? "todo-editing-row" : ""}
+              >
+                <td>{it.id}</td>
+                <td>{it.name}</td>
+                <td>{it.event}</td>
+                <td>{it.profession}</td>
+                <td>{it.education}</td>
+                <td className="todo-actions">
+                  <button
+                    className="btn btn-ghost"
+                    onClick={() => handleEdit(idx)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(idx)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

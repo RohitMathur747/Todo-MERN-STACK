@@ -1,0 +1,150 @@
+/* TodoList.css - Styled to match app theme */
+
+.todo-container {
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  padding: 18px;
+}
+
+.todo-title {
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.todo-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.todo-form .form-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.todo-form input,
+.todo-form select {
+  padding: 10px 12px;
+  border: 1.5px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  font-family: inherit;
+}
+
+.todo-form input:focus,
+.todo-form select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 4px 18px rgba(102, 126, 234, 0.08);
+}
+
+.todo-form .form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #dde6f3;
+  color: #2c3e50;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(11, 12, 14, 0.04);
+}
+
+.todo-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.todo-table thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 700;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02));
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+.todo-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.todo-table tbody tr:nth-child(even) {
+  background: #fbfcff;
+}
+
+.todo-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.todo-actions button {
+  margin-right: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #f2f5fb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.todo-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.todo-editing-row {
+  background: rgba(102, 126, 234, 0.06) !important;
+}
+
+.empty-message {
+  padding: 20px;
+  text-align: center;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .todo-form {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-actions button {
+    margin-bottom: 6px;
+  }
+}
