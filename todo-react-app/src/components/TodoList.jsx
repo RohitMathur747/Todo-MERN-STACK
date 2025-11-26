@@ -163,13 +163,14 @@ export default function TodoList() {
                 <td>{it.education}</td>
                 <td className="todo-actions">
                   <button
-                    className="btn btn-ghost"
+                    className="btn btn-edit"
                     onClick={() => handleEdit(idx)}
                   >
                     Edit
                   </button>
+                  {/* Delete uses a soft red by default. To use green, add the 'green' class: className="btn btn-delete green" */}
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-delete"
                     onClick={() => handleDelete(idx)}
                   >
                     Delete

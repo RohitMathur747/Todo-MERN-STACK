@@ -66,9 +66,20 @@
   font-size: 14px;
 }
 
-.guest {
+.guest-btn {
   font-size: 14px;
-  opacity: 0.9;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s ease;
+}
+.guest-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .logout-btn {

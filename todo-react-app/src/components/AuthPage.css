@@ -115,6 +115,17 @@ form {
   color: #764ba2;
 }
 
+.visitor-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.visitor-link:hover {
+  color: #764ba2;
+}
+
 @media (max-width: 480px) {
   .auth-box {
     padding: 30px 20px;

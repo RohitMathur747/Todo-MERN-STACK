@@ -36,7 +36,15 @@ export default function Header() {
               </button>
             </>
           ) : (
-            <span className="guest">Guest</span>
+            <>
+              <Link
+                to="/guest"
+                className="guest-btn"
+                aria-label="Visitor / Guest access"
+              >
+                Guest
+              </Link>
+            </>
           )}
         </div>
       </div>

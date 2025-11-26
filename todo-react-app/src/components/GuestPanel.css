@@ -1,0 +1,49 @@
+.guest-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+.guest-wrapper {
+  max-width: 920px;
+  width: 100%;
+  text-align: center;
+}
+.guest-wrapper h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.guest-wrapper .intro {
+  color: #555;
+  margin-bottom: 24px;
+}
+.guest-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.guest-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #f8f8ff;
+  border: 1px solid #e8e8ea;
+  padding: 20px;
+  border-radius: 8px;
+  width: 260px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.guest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+.guest-card h3 {
+  margin: 0 0 8px 0;
+}
+.guest-card.contact {
+  background: #fffaf0;
+}
+.footer-note {
+  margin-top: 20px;
+}

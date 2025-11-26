@@ -7,6 +7,7 @@ import AuthPage from "./components/AuthPage";
 import TodoList from "./components/TodoList";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
+import GuestPanel from "./components/GuestPanel";
 import "./App.css";
 
 function AppContent() {
@@ -18,6 +19,8 @@ function AppContent() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={isLoggedIn ? <TodoList /> : <AuthPage />} />
+          {/* Public visitor/guest panel with quick links to About/Contact */}
+          <Route path="/guest" element={<GuestPanel />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
