@@ -41,3 +41,7 @@ Example minimal Multibranch setup:
 4. Save and let Jenkins scan branches; it will discover `rohit/todo-list` and use `Jenkinsfile`.
 
 Need help configuring credentials or a webhook? Tell me whether you use a hosted Jenkins (Cloud) or a self-managed instance and I can provide step-by-step instructions.
+
+## Guest / Visitor Panel
+
+Visitors can access a simple Guest Panel from the header (or via `/guest`). This panel provides links to `About` and `Contact` pages without requiring a login. Use it to display info for non-authenticated users or to allow quick contact/support requests.

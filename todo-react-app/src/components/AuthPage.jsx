@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./AuthPage.css";
 
@@ -177,6 +178,11 @@ export default function AuthPage() {
               >
                 {isLogin ? "Sign Up" : "Login"}
               </button>
+            </p>
+            <p>
+              <Link to="/guest" className="visitor-link">
+                Continue as Guest
+              </Link>
             </p>
           </div>
         </div>
