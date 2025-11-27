@@ -42,6 +42,40 @@ Example minimal Multibranch setup:
 
 Need help configuring credentials or a webhook? Tell me whether you use a hosted Jenkins (Cloud) or a self-managed instance and I can provide step-by-step instructions.
 
+## End-to-end testing with Playwright ⚡
+
+This repository includes a basic Playwright configuration and an example E2E test that runs against the Vite dev server. To use Playwright locally:
+
+1. Install dependencies and Playwright browsers:
+
+```powershell
+cd "h:\Todo MERN STACK\todo-react-app"
+npm ci
+npx playwright install --with-deps
+```
+
+2. Start the Vite server and run tests in another terminal:
+
+```powershell
+npm run dev
+```
+
+In a second terminal:
+
+```powershell
+npm run test:e2e
+```
+
+3. To run Playwright tests headlessly, use `npm run test:e2e`. For debugging with a headed browser, run:
+
+```powershell
+npm run test:e2e:headed
+```
+
+4. On CI (Jenkins), make sure you run `npx playwright install --with-deps` as part of the install steps so that the required browsers are present for headless runs.
+
+Playwright stores a simple HTML report in `playwright-report/` by default after a run.
+
 ## Guest / Visitor Panel
 
 Visitors can access a simple Guest Panel from the header (or via `/guest`). This panel provides links to `About` and `Contact` pages without requiring a login. Use it to display info for non-authenticated users or to allow quick contact/support requests.
