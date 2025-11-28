@@ -23,20 +23,20 @@ pipeline {
 
     stage('Install') {
       steps {
-        sh 'npm ci'
-        sh 'npx playwright install --with-deps || true'
+        bat 'npm ci'
+        bat 'npx playwright install --with-deps || exit /b 0'
       }
     }
 
     stage('Build') {
       steps {
-        sh 'npm run build'
+        bat 'npm run build'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'npm test || true'
+        bat 'npm test || exit /b 0'
       }
     }
 
