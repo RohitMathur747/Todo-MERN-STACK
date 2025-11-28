@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useTheme } from "../context/ThemeContext";
 import "./Header.css";
 
 export default function Header() {
   const { isLoggedIn, user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="header">
@@ -28,6 +30,15 @@ export default function Header() {
           </ul>
         </nav>
         <div className="auth-section">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            aria-pressed={theme === "dark"}
+            title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          >
+            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+          </button>
           {isLoggedIn ? (
             <>
               <span className="user-name">Welcome, {user?.name || "User"}</span>

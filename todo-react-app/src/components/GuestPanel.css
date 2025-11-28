@@ -14,7 +14,7 @@
   margin-bottom: 8px;
 }
 .guest-wrapper .intro {
-  color: #555;
+  color: var(--muted);
   margin-bottom: 24px;
 }
 .guest-actions {
@@ -27,8 +27,8 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  background: #f8f8ff;
-  border: 1px solid #e8e8ea;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 20px;
   border-radius: 8px;
   width: 260px;

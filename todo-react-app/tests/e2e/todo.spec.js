@@ -2,7 +2,11 @@ const { test, expect } = require("@playwright/test");
 
 test.describe("Todo app (Auth -> Create Item)", () => {
   test("should login, reach todo list, and create item", async ({ page }) => {
-    await page.goto("/");
+    page.on("crash", () => console.error("Playwright: page crashed"));
+    page.on("close", () => console.error("Playwright: page closed"));
+    const response = await page.goto("/");
+    console.log("playwright: goto response status ->", response ? response.status() : "null");
+    await page.waitForLoadState("networkidle");
 
     // Confirm we see the auth page and Login heading
     await expect(page.getByRole("heading", { name: "Login" })).toBeVisible();

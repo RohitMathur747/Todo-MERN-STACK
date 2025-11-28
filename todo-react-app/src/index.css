@@ -1,6 +1,20 @@
 :root {
+  /* Primary theme variables - light mode defaults */
   --bg: #f5f7fb;
   --fg: #0f172a;
+  --muted: #7f8c8d;
+  --card-bg: #ffffff;
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --header-bg: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+  --header-fg: #ffffff;
+  --footer-bg: #2c3e50;
+  --footer-fg: #ecf0f1;
+  --btn-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
 * {
@@ -15,6 +29,26 @@ body {
     Roboto, "Helvetica Neue", Arial;
   background: var(--bg);
   color: var(--fg);
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+/* Dark theme override */
+.dark {
+  --bg: #071127;
+  --fg: #e6eef8;
+  --muted: #9fb6d5;
+  --card-bg: #0f172a;
+  --primary: #3b82f6;
+  --secondary: #7c3aed;
+  --header-bg: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+  --header-fg: #ffffff;
+  --footer-bg: #0b1220;
+  --footer-fg: #cfe7ff;
+  --btn-bg: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
 #root {
