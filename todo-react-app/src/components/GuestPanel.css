@@ -44,6 +44,9 @@
 .guest-card.contact {
   background: #fffaf0;
 }
+.guest-card.register {
+  background: #f0f8ff;
+}
 .footer-note {
   margin-top: 20px;
 }
