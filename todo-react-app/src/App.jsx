@@ -22,6 +22,7 @@ function AppContent() {
           <Route path="/" element={isLoggedIn ? <TodoList /> : <AuthPage />} />
           {/* Public visitor/guest panel with quick links to About/Contact */}
           <Route path="/guest" element={<GuestPanel />} />
+          <Route path="/register" element={<AuthPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
