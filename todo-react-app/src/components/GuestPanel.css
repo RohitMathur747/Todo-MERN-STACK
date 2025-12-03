@@ -42,10 +42,26 @@
   margin: 0 0 8px 0;
 }
 .guest-card.contact {
-  background: #fffaf0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  border-radius: 8px;
+  width: 260px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .guest-card.register {
-  background: #f0f8ff;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  border-radius: 8px;
+  width: 260px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .footer-note {
   margin-top: 20px;
