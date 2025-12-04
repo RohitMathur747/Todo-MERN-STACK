@@ -76,15 +76,29 @@
   color: white;
 }
 
-/* New: edit / delete variants with black text and theme-friendly backgrounds */
+/* New: view / edit / delete variants with black text and theme-friendly backgrounds */
+.btn-view {
+  background: linear-gradient(
+    180deg,
+    var(--card-bg) 0%,
+    rgba(240, 248, 255, 1) 100%
+  );
+  color: #007bff; /* blue text */
+  border: 1px solid rgba(0, 123, 255, 0.25);
+}
+
+.btn-view:hover {
+  background: linear-gradient(180deg, #e6f3ff 0%, #cce7ff 100%);
+}
+
 .btn-edit {
   background: linear-gradient(
     180deg,
     var(--card-bg) 0%,
     rgba(243, 247, 255, 1) 100%
   );
-  color: var(--fg);
-  border: 1px solid rgba(102, 126, 234, 0.12);
+  color: #28a745; /* green text */
+  border: 1px solid rgba(40, 167, 69, 0.25);
 }
 
 .btn-edit:hover {

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TodoList.css";
 
 export default function TodoList() {
+  const navigate = useNavigate();
   const emptyItem = {
     id: "",
     name: "",
@@ -9,9 +11,16 @@ export default function TodoList() {
     profession: "",
     education: "",
   };
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+    const savedItems = localStorage.getItem("todoItems");
+    return savedItems ? JSON.parse(savedItems) : [];
+  });
   const [form, setForm] = useState(emptyItem);
   const [editingIndex, setEditingIndex] = useState(-1);
+
+  useEffect(() => {
+    localStorage.setItem("todoItems", JSON.stringify(items));
+  }, [items]);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -162,6 +171,14 @@ export default function TodoList() {
                 <td>{it.profession}</td>
                 <td>{it.education}</td>
                 <td className="todo-actions">
+                  <button
+                    className="btn btn-view"
+                    onClick={() =>
+                      navigate("/todo-detail", { state: { id: it.id } })
+                    }
+                  >
+                    View
+                  </button>
                   <button
                     className="btn btn-edit"
                     onClick={() => handleEdit(idx)}
