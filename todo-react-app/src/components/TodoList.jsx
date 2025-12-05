@@ -10,6 +10,13 @@ export default function TodoList() {
     event: "",
     profession: "",
     education: "",
+    title: "",
+    description: "",
+    status: "pending",
+    dueDate: "",
+    isCompleted: false,
+    createdAt: "",
+    updatedAt: "",
   };
   const [items, setItems] = useState(() => {
     const savedItems = localStorage.getItem("todoItems");
@@ -33,7 +40,8 @@ export default function TodoList() {
     // Prevent duplicate IDs
     if (items.some((it) => it.id === form.id))
       return alert("ID already exists");
-    setItems((prev) => [...prev, { ...form }]);
+    const now = new Date().toISOString();
+    setItems((prev) => [...prev, { ...form, createdAt: now, updatedAt: now }]);
     setForm(emptyItem);
   }
 
@@ -45,8 +53,11 @@ export default function TodoList() {
   function handleUpdate(e) {
     e.preventDefault();
     if (editingIndex < 0) return;
+    const now = new Date().toISOString();
     setItems((prev) =>
-      prev.map((it, i) => (i === editingIndex ? { ...form } : it))
+      prev.map((it, i) =>
+        i === editingIndex ? { ...form, updatedAt: now } : it
+      )
     );
     setEditingIndex(-1);
     setForm(emptyItem);
@@ -117,6 +128,42 @@ export default function TodoList() {
           <option value="bba">BBA</option>
           <option value="other">Other</option>
         </select>
+        <input
+          name="title"
+          value={form.title}
+          onChange={handleChange}
+          placeholder="Task Title"
+        />
+        <textarea
+          name="description"
+          value={form.description}
+          onChange={handleChange}
+          placeholder="Task Description"
+          rows="3"
+        />
+        <select name="status" value={form.status} onChange={handleChange}>
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <input
+          type="date"
+          name="dueDate"
+          value={form.dueDate}
+          onChange={handleChange}
+          placeholder="Due Date"
+        />
+        <label>
+          <input
+            type="checkbox"
+            name="isCompleted"
+            checked={form.isCompleted}
+            onChange={(e) =>
+              setForm((prev) => ({ ...prev, isCompleted: e.target.checked }))
+            }
+          />
+          Completed
+        </label>
 
         <div className="form-actions">
           {editingIndex >= 0 ? (
@@ -148,14 +195,16 @@ export default function TodoList() {
               <th>Name</th>
               <th>Event</th>
               <th>Profession</th>
-              <th>Education</th>
+              <th>Title</th>
+              <th>Created Date</th>
+              <th>End Date</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {items.length === 0 && (
               <tr>
-                <td colSpan={6} className="empty-message">
+                <td colSpan={8} className="empty-message">
                   No items yet.
                 </td>
               </tr>
@@ -169,7 +218,13 @@ export default function TodoList() {
                 <td>{it.name}</td>
                 <td>{it.event}</td>
                 <td>{it.profession}</td>
-                <td>{it.education}</td>
+                <td>{it.title}</td>
+                <td>
+                  {it.createdAt
+                    ? new Date(it.createdAt).toLocaleDateString()
+                    : ""}
+                </td>
+                <td>{it.dueDate}</td>
                 <td className="todo-actions">
                   <button
                     className="btn btn-view"
