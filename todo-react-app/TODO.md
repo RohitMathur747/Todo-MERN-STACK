@@ -1,13 +1,14 @@
-# TODO: Add User Registration to Guest Panel
+# TODO: Update Todo List
 
-## Tasks
+## Overview
 
-- [x] Modify `todo-react-app/src/components/GuestPanel.jsx`:
-  - [x] Add registration form section with fields for name, email, password.
-  - [x] Add state to manage list of registered users.
-  - [x] Add table below form to display users with Name, Email, Actions (Edit/Delete buttons).
-  - [x] Implement functions for adding new user, editing user, deleting user.
-  - [x] Add form validation and error handling.
-- [x] Update `todo-react-app/src/components/GuestPanel.css`:
-  - [x] Add styles for registration form, table, buttons, and layout.
-- [ ] Followup: Test registration form, table display, edit/delete functionality, and ensure responsive styling.
+Update the todo list to include task fields: id, name, event, profession, education, title, description, status, dueDate.
+
+## Steps
+
+- [x] Update TodoList.jsx: Change item structure to include the specified fields.
+- [x] Update TodoList.jsx: Modify form inputs to handle new fields (use appropriate input types like select for enums, date for dates).
+- [x] Update TodoList.jsx: Update table headers and display to show relevant fields (e.g., id, name, event, profession, education).
+- [x] Update TodoDetail.jsx: Ensure the detail view displays the updated fields.
+- [x] Update localStorage key if needed to reflect new structure.
+- [x] Test the application to ensure everything works correctly.

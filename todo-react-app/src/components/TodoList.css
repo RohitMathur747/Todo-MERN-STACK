@@ -134,6 +134,15 @@
   transform: translateY(0);
 }
 
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .btn-delete {
+    background: #ffcccc; /* light red for dark mode */
+    color: #111; /* keep black text */
+    border: 1px solid rgba(231, 76, 60, 0.4);
+  }
+}
+
 .todo-table {
   width: 100%;
   border-collapse: collapse;
