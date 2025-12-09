@@ -49,6 +49,13 @@ export default function Header() {
           ) : (
             <>
               <Link
+                to="/customer-auth"
+                className="guest-btn"
+                aria-label="Customer access"
+              >
+                Customer
+              </Link>
+              <Link
                 to="/guest"
                 className="guest-btn"
                 aria-label="Visitor / Guest access"

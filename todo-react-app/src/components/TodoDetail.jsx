@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import * as XLSX from "xlsx";
 import "./TodoDetail.css";
 
 export default function TodoDetail() {
-  const location = useLocation();
+  const { id } = useParams();
   const navigate = useNavigate();
-  const id = location.state?.id;
   const [item, setItem] = useState(null);
 
   useEffect(() => {
