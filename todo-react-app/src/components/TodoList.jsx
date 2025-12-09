@@ -228,9 +228,7 @@ export default function TodoList() {
                 <td className="todo-actions">
                   <button
                     className="btn btn-view"
-                    onClick={() =>
-                      navigate("/todo-detail", { state: { id: it.id } })
-                    }
+                    onClick={() => navigate(`/todo/${it.id}`)}
                   >
                     View
                   </button>
