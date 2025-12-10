@@ -14,15 +14,20 @@
     "install:playwright": "npx playwright install --with-deps"
   },
   "dependencies": {
+    "framer-motion": "^12.23.25",
     "jspdf": "^3.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.2",
+    "recharts": "^3.5.1",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
     "vite": "^5.0.0"
   },
   "postinstall": "npx playwright install --with-deps"
