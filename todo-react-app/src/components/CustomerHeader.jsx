@@ -20,13 +20,10 @@ export default function CustomerHeader() {
         <nav className="customer-nav">
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
               <Link to="/customer-dashboard">Dashboard</Link>
             </li>
             <li>
-              <Link to="/customer-details">My Details</Link>
+              <Link to="/customer-details">Customer Details</Link>
             </li>
           </ul>
         </nav>

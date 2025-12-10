@@ -37,7 +37,7 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/guest" element={<GuestPanel />} />
         <Route path="/customer/auth" element={<CustomerAuthPage />} />
-        <Route path="/customer/dashboard" element={<CustomerDashboard />} />
+        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
         <Route path="/customer/details" element={<CustomerDetailsPage />} />
       </Routes>
       {isCustomerRoute ? <CustomerFooter /> : <Footer />}
